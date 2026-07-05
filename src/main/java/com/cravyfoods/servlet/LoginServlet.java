@@ -44,8 +44,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("RestaurantServlet");
         } else {
             // Login failed: Redirect back with error message
-            request.setAttribute("errorMessage", "Invalid Username or Password!");
-            request.getRequestDispatcher("index.html?error=true").forward(request, response);
+            response.sendRedirect("index.html?error=true");
         }
     }
 
